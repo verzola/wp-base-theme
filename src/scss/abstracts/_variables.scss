@@ -4,12 +4,12 @@
 
 /// Regular font family
 /// @type List
-$text-font-stack: "Open Sans", sans-serif !default;
+$text-font-stack: 'Open Sans', sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
-$code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
-  "Monaco", monospace !default;
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+  'Monaco', monospace !default;
 
 /// Copy text color
 /// @type Color
@@ -39,13 +39,13 @@ $max-width: 1180px !default;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  "small": 320px,
-  "medium": 768px,
-  "large": 1024px
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
 ) !default;
 
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: "/assets/" !default;
+$base-url: '/assets/' !default;
