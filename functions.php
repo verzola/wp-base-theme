@@ -28,30 +28,12 @@ add_action('after_setup_theme', function () {
 
 // Enqueue theme scripts and styles
 add_action('wp_enqueue_scripts', function () {
-    $distFile = new DirectoryIterator(get_stylesheet_directory() . '/dist');
+    $manifest = json_decode(file_get_contents(__DIR__ . '/dist/manifest.json'), true);
 
-    foreach ($distFile as $file) {
-        $fullName = basename($file);
-        $name = substr(basename($fullName), 0, strpos(basename($fullName), '.'));
+    wp_enqueue_script('base_js', get_stylesheet_directory_uri() . '/dist/' . $manifest['main.js'], ['jquery']);
 
-        if (pathinfo($file, PATHINFO_EXTENSION) === 'js') {
-            wp_enqueue_script(
-                $name,
-                get_template_directory_uri() . '/dist/' . $fullName,
-                ['jquery'],
-                null,
-                true
-            );
-        }
-
-        if (pathinfo($file, PATHINFO_EXTENSION) === 'css' && !env('INJECT_CSS')) {
-            wp_enqueue_style(
-                $name,
-                get_template_directory_uri() . '/dist/' . $fullName,
-                [],
-                null
-            );
-        }
+    if (isset($manifest['main.css'])) {
+        wp_enqueue_style('base_css', get_stylesheet_directory_uri() . '/dist/' . $manifest['main.css']);
     }
 
     wp_enqueue_style('google-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
