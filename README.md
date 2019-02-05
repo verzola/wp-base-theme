@@ -1,6 +1,7 @@
 # wp-base-theme
 
 ## Features
+
 - webpack
 - sass
 - autoprefixer
@@ -18,6 +19,7 @@
 - hamburgers
 
 ## Theme files
+
 - 404.php
 - archive.php
 - footer.php
@@ -31,6 +33,7 @@
 - style.css
 
 ## Npm scripts
+
 ```sh
 # starts webpack in watch mode with browsersync
 npm start
@@ -41,4 +44,3 @@ npm run build
 # formats code with prettier
 npm run format
 ```
-
