@@ -1,5 +1,5 @@
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -23,7 +23,7 @@ module.exports = {
     jquery: 'jQuery',
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 3000,
