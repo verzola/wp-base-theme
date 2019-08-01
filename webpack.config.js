@@ -1,3 +1,6 @@
+const dev = process.env.NODE_ENV !== 'production'
+const path = require('path')
+
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
@@ -6,8 +9,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const WebpackAssetsManifest = require('webpack-assets-manifest')
 const WebpackBar = require('webpackbar')
-const dev = process.env.NODE_ENV !== 'production'
-const path = require('path')
 
 module.exports = {
   mode: dev ? 'development' : 'production',
@@ -24,12 +25,15 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 3000,
-      proxy: process.env.BROWSERSYNC_PROXY || 'http://localhost',
-      files: ['**/*.php'],
-    }),
+    new BrowserSyncPlugin(
+      {
+        host: process.env.BROWSERSYNC_HOST || 'localhost',
+        port: parseInt(process.env.BROWSERSYNC_PORT, 10) || 3000,
+        proxy: process.env.BROWSERSYNC_PROXY || 'http://localhost',
+        files: ['**/*.php'],
+      },
+      { injectCss: true }
+    ),
     new MiniCssExtractPlugin({
       filename: dev ? '[name].css' : '[name].[hash].css',
       chunkFilename: dev ? '[id].css' : '[id].[hash].css',
