@@ -2,6 +2,11 @@
 
 Webpack-based base theme for wordpress
 
+## Features
+- Organized
+- Scalable
+- Fast
+
 ## Tools
 - Webpack
 - SASS
