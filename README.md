@@ -1,46 +1,44 @@
-# wp-base-theme
+# Wordpress Base Theme
+
+Webpack-based base theme for wordpress
 
 ## Features
+- Organized
+- Scalable
+- Fast
 
-- webpack
-- sass
-- autoprefixer
-- 7in1 sass pattern
-- browsersync auto reload
-- css & js minify
-- optimize images
-- source maps
-- transpile modern js with babel
-- lint js with eslint
-- lint css with stylelint
-- common theme files
-- prettier to format code
-- normalize.css
-- hamburgers
+## Tools
+- Webpack
+- SASS
+- Autoprefixer
+- Babel
+- Browsersync
+- ESLint
+- Stylelint
+- Prettier
+- Husky
+- Lint-staged
+- Prettier
+- Normalize.css
+- Hamburgers
 
-## Theme files
-
-- 404.php
-- archive.php
-- footer.php
-- functions.php
-- header.php
-- index.php
-- page.php
-- screenshot.php
-- sidebar.php
-- single.php
-- style.css
-
-## Npm scripts
-
+## Setup
 ```sh
-# starts webpack in watch mode with browsersync
-npm start
+# enter in themes directory in your wordpress installation
+$ cd wp-content/themes/
 
-# build assets for production
-npm run build
+# clone base theme
+$ git clone https://github.com/verzola/wp-base-theme.git
 
-# formats code with prettier
-npm run format
+# enter in base theme directory
+$ cd wp-base-theme
+
+# install dependencies
+$ npm install
+
+# run browsersync development server
+$ npm run dev
+
+# compile assets for production
+# npm run build
 ```
