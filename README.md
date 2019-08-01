@@ -1,6 +1,6 @@
 # Wordpress Base Theme
 
-Webpack-based base theme for wordpress
+Webpack-based base theme for Wordpress
 
 ## Features
 - Organized
