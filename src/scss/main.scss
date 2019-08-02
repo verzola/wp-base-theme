@@ -23,7 +23,6 @@
 @import 'layout/footer';
 
 // 5. Components
-@import 'components/article';
 @import 'components/author';
 @import 'components/button';
 @import 'components/card';
@@ -33,7 +32,6 @@
 
 // 6. Page-specific styles
 @import 'pages/home';
-@import 'pages/404';
 
 // 7. Themes
 @import 'themes/default';

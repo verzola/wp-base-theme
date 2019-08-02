@@ -11,7 +11,7 @@
   text-align: center;
   transition: background 150ms;
 
-  @include on-event {
+  &:hover {
     background: lighten(#3498db, 5%);
     color: #fff;
     outline: 0;

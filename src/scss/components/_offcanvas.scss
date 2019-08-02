@@ -25,7 +25,7 @@
     padding: 2rem 0;
     text-decoration: none;
 
-    @include on-event {
+    &:hover {
       background: rgba(#fff, 0.1);
     }
   }

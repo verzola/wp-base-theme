@@ -18,7 +18,7 @@
     font-weight: bold;
     line-height: 1.5;
 
-    @include on-event {
+    &:hover {
       color: #fff;
       text-decoration: none;
     }
