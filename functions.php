@@ -30,7 +30,7 @@ add_action('after_setup_theme', function () {
 add_action('wp_enqueue_scripts', function () {
     $manifest = json_decode(file_get_contents(__DIR__ . '/dist/manifest.json'), true);
 
-    wp_enqueue_script('base_js', get_stylesheet_directory_uri() . '/dist/' . $manifest['main.js'], ['jquery']);
+    wp_enqueue_script('base_js', get_stylesheet_directory_uri() . '/dist/' . $manifest['main.js'], ['jquery'], false, true);
 
     if (isset($manifest['main.css'])) {
         wp_enqueue_style('base_css', get_stylesheet_directory_uri() . '/dist/' . $manifest['main.css']);
