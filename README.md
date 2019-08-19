@@ -40,5 +40,5 @@ $ npm install
 $ npm run dev
 
 # compile assets for production
-# npm run build
+$ npm run build
 ```
